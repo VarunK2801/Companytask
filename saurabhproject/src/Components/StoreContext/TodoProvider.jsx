@@ -18,8 +18,10 @@ function TodoProvider(props) {
 
     const editFunction =(task)=>{
         setIsEditingTask(task)
-        let newList = taskList.filter((item)=> item.title !== task.title);    
-        setTaskList(newList)
+        if(task !== null){
+            let newList = taskList.filter((item)=> item.title !== task.title);    
+            setTaskList(newList)
+        }
     }
 
     const obj={

@@ -10,7 +10,7 @@ function CreationPage() {
     const todoCtx = useContext(TodoContext);
     const {editingTask} = todoCtx
     const history = useHistory()
-
+    console.log(todoCtx.editingTask,'line 13')
     useEffect(()=>{
         if(editingTask){
             titleRef.current.value = editingTask.title;
@@ -41,6 +41,7 @@ function CreationPage() {
             status : tableRef.current.value,
         }
         todoCtx.addTask(obj);
+        todoCtx.editFunction(null);
         titleRef.current.value='' ;
         descriptionRef.current.value='' ;
         dateRef.current.value='' ;
